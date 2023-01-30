@@ -26,7 +26,7 @@ const { brand_name, navbarItem_1, navbarItem_2, navbarItem_3, navbarItem_4, navb
         <li class="navbar-item"><a href="#referanslarimiz" class="navbar-link">{navbarItem_4}</a></li>
         <li class="navbar-item"><a href="#iletisim" class="navbar-link">{navbarItem_5}</a></li>
 
-        <li class="navbar-item buttons"><a href="tel:+905331514270" class="navbar-link button button-outline"><i class="fa-solid fa-phone"></i>{buttonItem_1}</a></li>
+        <li class="navbar-item buttons" id="small-laptop-delete"><a href="tel:+905331514270" class="navbar-link button button-outline"><i class="fa-solid fa-phone"></i>{buttonItem_1}</a></li>
         <li class="navbar-item button" id="tel-no"><a href="tel:+905331514270" class="navbar-link button">{buttonItem_2}</a></li>
         <li class="navbar-item button" id="go-contact"><a href="#iletisim" class="navbar-link button">{buttonItem_2}</a></li>
     </ul>
@@ -247,7 +247,33 @@ const { brand_name, navbarItem_1, navbarItem_2, navbarItem_3, navbarItem_4, navb
         }
     }
 
-    @media only screen and (max-width: 920px){
+    @media only screen and (max-width: 900px){
+        h2{
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        #small-laptop-delete{
+            display: none;
+        }
+        ul{
+            margin-top: 1rem;
+        }
+        li.navbar-item:last-child{
+            margin-left: 5rem;
+        }
+
+
+        #ekstra-tel{
+            display: inline-block;
+        }
+    }
+
+    @media only screen and (max-width: 768px){
+        nav{
+            position: fixed;
+            top: 0;
+        }
         h2{
             display: flex;
             flex-direction: column;
@@ -275,6 +301,7 @@ const { brand_name, navbarItem_1, navbarItem_2, navbarItem_3, navbarItem_4, navb
         }   
         nav ul.navbar-items{
             gap: 0px;
+            margin-top: 0rem;
         }
 
         nav ul li.buttons{
