@@ -94,9 +94,15 @@ const { header_text, article_text, button_text, image_path, seo_header, alt_text
         a#go-contact{
             display: none;
         }
-
+    }
+    
+    @media only screen and (max-width: 768px){
+        img{
+            margin-top: 5rem;
+        }
     
     }
+
     @media only screen and (max-width: 425px){
         section{
             padding: .75rem 1rem  2rem 1rem;
@@ -104,6 +110,9 @@ const { header_text, article_text, button_text, image_path, seo_header, alt_text
         }
         h3{
             font-size: var(--h2);
+        }
+        img{
+            margin-top: 6rem;
         }
         
     }
