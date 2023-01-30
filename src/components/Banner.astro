@@ -83,6 +83,9 @@ const { header_text, article_text, button_text, image_path, seo_header, alt_text
         section{
             flex-direction: column-reverse;
         }
+        article{
+            margin-top: 1.5rem;        
+        }
 
         a#tel-no{
             display: inline-block;
@@ -93,6 +96,16 @@ const { header_text, article_text, button_text, image_path, seo_header, alt_text
         }
 
     
+    }
+    @media only screen and (max-width: 425px){
+        section{
+            padding: .75rem 1rem  2rem 1rem;
+            gap: 5%;
+        }
+        h3{
+            font-size: var(--h2);
+        }
+        
     }
 </style>
 
