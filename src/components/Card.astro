@@ -1,0 +1,56 @@
+---
+export interface Props {
+    imgPath: string;
+    altText: string;
+    cardHeader: string;
+    cardDesc: string;
+
+}
+
+const { imgPath, altText, cardHeader, cardDesc } = Astro.props;
+---
+
+<div class="card">
+    <img src={imgPath} alt={altText}>
+    <h4>{cardHeader}</h4>
+    <p>{cardDesc}</p>
+</div>
+
+<style>
+    div.card{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--white);
+        border: 1px solid var(--card-edge-color);
+        border-radius: 20px;
+        box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.1);
+        padding: 1.5rem;
+        text-align: center;
+
+        -webkit-transition: scale .3s ease-out, box-shadow .5s ease-out;
+        -moz-transition: scale .3s ease-out, box-shadow .5s ease-out;
+        -o-transition: scale .3s ease-out, box-shadow .5s ease-out;
+        transition: scale .3s ease-out, box-shadow .5s ease-out;
+        
+    }
+    div.card:hover{
+        scale: 1.0001;
+        box-shadow: 0px 6px 20px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    h4{
+        margin-top: 0.75rem;
+        font-weight: var(--wmedium);
+        font-size: var(--h5);
+    }
+    
+    p{
+        margin-top: 0.75rem;
+        font-weight: var(--wregular);
+        font-size: var(--h6);
+        text-align: justify;
+        line-height: 1.3rem;
+    }
+</style>

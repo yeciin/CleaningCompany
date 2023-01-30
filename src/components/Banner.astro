@@ -1,0 +1,98 @@
+---
+export interface Props {
+    header_text: string;
+
+	article_text: string;
+	button_text: string;
+	image_path: string;
+    alt_text: string;
+
+    seo_header: string;
+}
+
+const { header_text, article_text, button_text, image_path, seo_header, alt_text } = Astro.props;
+---
+
+<section>
+    <h2 class="sr-only">{seo_header}</h2>
+    <article>
+        <h3>{header_text}</h3>
+        <p>{article_text}</p>
+        <a href="#iletisim" class="button primary-button" id="go-contact">{button_text}</a>
+        <a href="tel:+905331514270" class="button primary-button" id="tel-no">{button_text}</a>
+    </article>
+        <img src={image_path} alt={alt_text}>
+</section>
+<svg id="visual" viewBox="0 0 1400 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+    <path d="M0 122L26 112C52 102 104 82 155.8 72.7C207.7 63.3 259.3 64.7 311.2 66.2C363 67.7 415 69.3 466.8 81.2C518.7 93 570.3 115 622.2 121.5C674 128 726 119 777.8 106.3C829.7 93.7 881.3 77.3 933.2 67.2C985 57 1037 53 1088.8 62.2C1140.7 71.3 1192.3 93.7 1244.2 99.7C1296 105.7 1348 95.3 1374 90.2L1400 85L1400 0L1374 0C1348 0 1296 0 1244.2 0C1192.3 0 1140.7 0 1088.8 0C1037 0 985 0 933.2 0C881.3 0 829.7 0 777.8 0C726 0 674 0 622.2 0C570.3 0 518.7 0 466.8 0C415 0 363 0 311.2 0C259.3 0 207.7 0 155.8 0C104 0 52 0 26 0L0 0Z" fill="#3d8bfd"></path>
+    <path d="M0 101L26 89.8C52 78.7 104 56.3 155.8 54.3C207.7 52.3 259.3 70.7 311.2 81.8C363 93 415 97 466.8 88.7C518.7 80.3 570.3 59.7 622.2 49.7C674 39.7 726 40.3 777.8 41.7C829.7 43 881.3 45 933.2 49C985 53 1037 59 1088.8 63.8C1140.7 68.7 1192.3 72.3 1244.2 74.3C1296 76.3 1348 76.7 1374 76.8L1400 77L1400 0L1374 0C1348 0 1296 0 1244.2 0C1192.3 0 1140.7 0 1088.8 0C1037 0 985 0 933.2 0C881.3 0 829.7 0 777.8 0C726 0 674 0 622.2 0C570.3 0 518.7 0 466.8 0C415 0 363 0 311.2 0C259.3 0 207.7 0 155.8 0C104 0 52 0 26 0L0 0Z" fill="#267dfe"></path>
+    <path d="M0 59L26 58.5C52 58 104 57 155.8 54.2C207.7 51.3 259.3 46.7 311.2 46.8C363 47 415 52 466.8 55.5C518.7 59 570.3 61 622.2 58.2C674 55.3 726 47.7 777.8 39.7C829.7 31.7 881.3 23.3 933.2 21.2C985 19 1037 23 1088.8 29C1140.7 35 1192.3 43 1244.2 42.2C1296 41.3 1348 31.7 1374 26.8L1400 22L1400 0L1374 0C1348 0 1296 0 1244.2 0C1192.3 0 1140.7 0 1088.8 0C1037 0 985 0 933.2 0C881.3 0 829.7 0 777.8 0C726 0 674 0 622.2 0C570.3 0 518.7 0 466.8 0C415 0 363 0 311.2 0C259.3 0 207.7 0 155.8 0C104 0 52 0 26 0L0 0Z" fill="#0d6efd"></path>
+</svg>
+<!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0D6EFD" fill-opacity="1" d="M0,128L40,144C80,160,160,192,240,186.7C320,181,400,139,480,138.7C560,139,640,181,720,197.3C800,213,880,203,960,186.7C1040,171,1120,149,1200,154.7C1280,160,1360,192,1400,208L1440,224L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg> -->
+
+<style>
+    section{
+        overflow: hidden;
+        background-color: var(--primary-color);
+        display: flex;
+        padding: 2rem 5rem  0rem 5rem;
+        gap: 15%;
+        width: 100%;
+     }
+     article{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 1rem;
+        margin-top: 3rem;        
+    }
+
+    h3{
+        font-size: var(--h1);
+        color: var(--white);
+        width: 75%;
+    }
+    p{
+        font-size: var(--h5);
+        color: var(--white);
+        line-height: 1.6rem;
+        font-weight: var(--wlight);
+    }
+   
+    img{
+        width: 80vw;
+        height: 60vh;
+    } 
+
+    a#tel-no{
+        display: none;
+    }
+    
+
+    @media only screen and (max-width: 1144px){
+        section{
+            padding: 2.5rem 3rem  4.5rem 3rem;
+            gap: 5%;
+        }
+        h3{
+            width: 100%;
+        }
+    }
+    @media only screen and (max-width: 920px){
+        section{
+            flex-direction: column-reverse;
+        }
+
+        a#tel-no{
+            display: inline-block;
+        }
+
+        a#go-contact{
+            display: none;
+        }
+
+    
+    }
+</style>
+
