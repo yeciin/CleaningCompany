@@ -1,104 +1,95 @@
 ---
-import Card from './Card.astro';
-
+import Card from "./Card.astro";
 export interface Props {
-    mottoText: string;
+  mottoText: string;
 }
-
 const { mottoText } = Astro.props;
 ---
 
 <section>
-    <h3>Elimizden Gelenin <span class="blue-text">En İyisini</span> Sunuyoruz</h3>
-    <h6 class="motto-text">{mottoText}</h6>
-    <article>
-
-        <div class="cards grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 gap-6">
-            <Card 
-                imgPath="/hizmet_1.png"
-                altText="Ev ikonu"
-                cardHeader="Ev Temizliği"
-                cardDesc="Ev temizliği, evinizin sağlıklı ve hijyenik kalmasını sağlamak için yapılan temel bir ihtiyaçtır. Biz, siz değerli müşterilerimize ev temizliği hizmeti sunuyoruz. Profesyonel ekibimiz ile evinizin her köşesine kadar temizlik yapıyoruz. En uygun fiyatlar ile sizlere hizmet veriyoruz. Hemen bizi arayın ve evinizin temizliğinin keyfini çıkarın!"
-            />
-            <Card 
-                imgPath="/hizmet_2.png"
-                altText="Temizlik kovası ikonu"
-                cardHeader="Ofis Temizliği"
-                cardDesc="Ofis temizliği, işletmenizin profesyonel görünmesini ve çalışanlarınızın sağlıklı bir ortamda çalışmasını sağlamak için önemlidir. Ofis temizliği için profesyonel ekibimizle sizlere hizmet veriyoruz. Ofisinizin her alanına, masalarına, koltuklarına kadar temizlik yapıyoruz. En uygun fiyatlar ile hizmetinizdeyiz. Hemen bizi arayın!"
-            />
-            <Card 
-                imgPath="/hizmet_3.png"
-                altText="Cam temizleyen erkek ikonu"
-                cardHeader="Daire Cam Temizliği"
-                cardDesc="Daire cam temizliği, evinizin güzel görünmesini ve gün ışığının içeri girmeyi sağlamak için önemlidir. Ekibimiz, dairenizin tüm camlarını, pencerelerini ve balkonlarını temizleyecek ve parlak bir görünüm sağlayacaktır. En uygun fiyatlar ile sizlere hizmet veriyoruz. Hemen bizi arayın ve dairenizin camlarının temizliğinin keyfini çıkarın!"
-            />
-            <Card 
-                imgPath="/hizmet_4.png"
-                altText="Cam temizleyen erkek ikonu"
-                cardHeader="Dış Cephe Cam Temizliği"
-                cardDesc="Dış cephe cam temizliği, binaların estetik görünümünü ve güvenliği için önemlidir. Biz, siz değerli müşterilerimize profesyonel dış cephe cam temizliği hizmeti sunuyoruz. Ekibimiz, binalarınızın dış cephe camlarını, pencerelerini ve balkonlarını temizleyecek ve parlak bir görünüm sağlayacaktır. En uygun fiyatlar ile sizlere hizmet veriyoruz. Hemen bizi arayın ve binalarınızın dış cephe camlarının temizliğinin keyfini çıkarın!"
-            />
-            <Card 
-                imgPath="/hizmet_5.png"
-                altText="İnşaat bareti ikonu"
-                cardHeader="İnşaat Sonrası Temizlik"
-                cardDesc="Inşaat sonrası temizlik, inşaat projelerinin tamamlandıktan sonra yapılması gereken önemli bir adımdır. Biz, siz değerli müşterilerimize profesyonel inşaat sonrası temizlik hizmeti sunuyoruz. Ekibimiz, inşaat materyallerini, tozları ve atıkları temizleyecek ve inşaat projesinin tamamlandığı alanı hijyenik bir hale getirecektir. En uygun fiyatlar ile sizlere hizmet veriyoruz. Hemen bizi arayın ve inşaat projesinin sonrasında rahat bir nefes alın!"
-            />
-            <Card 
-                imgPath="/hizmet_6.png"
-                altText="Bir ev ikonu etrafında çember oluşturmuş temizlik eşyaları ikonları"
-                cardHeader="Koltuk Temizliği"
-                cardDesc="Koltuk temizliği, evinizin veya ofisinizin hijyenik ve güzel görünmesi için önemlidir. Biz, siz değerli müşterilerimize profesyonel koltuk temizliği hizmeti sunuyoruz. Ekibimiz, koltuklarınızın her türlü lekelerini, kirlerini ve kokularını temizleyecek ve eski görünümlerini geri getirecektir. En uygun fiyatlar ile sizlere hizmet veriyoruz. Hemen bizi arayın ve koltuklarınızın temizliğinin keyfini çıkarın!"
-            />
-        </div>
-    </article>
+  <h3>We Offer <span class="blue-text">The Best</span> of What We Can Do</h3>
+  <h6 class="motto-text">{mottoText}</h6>
+  <article>
+    <div class="cards grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 gap-6">
+      <Card
+        imgPath="service_1.png"
+        altText="Home icon"
+        cardHeader="Home Cleaning"
+        cardDesc="Home cleaning is a fundamental need to keep your home healthy and hygienic. We provide home cleaning service to our valued customers. Our professional team cleans every corner of your home. We offer our services at the most affordable prices. Call us now and enjoy the cleanliness of your home!"
+      />
+      <Card
+        imgPath="service_2.png"
+        altText="Cleaning bucket icon"
+        cardHeader="Office Cleaning"
+        cardDesc="Office cleaning is important to maintain a professional appearance for your business and provide a healthy working environment for your employees. We offer office cleaning service with our professional team. We clean every area of your office, including desks and chairs. We are at your service with the most affordable prices. Call us now!"
+      />
+      <Card
+        imgPath="service_3.png"
+        altText="Male icon cleaning windows"
+        cardHeader="Apartment Window Cleaning"
+        cardDesc="Apartment window cleaning is important to enhance the appearance of your home and allow natural light to enter. Our team will clean all the windows, glass panels, and balconies of your apartment, providing a sparkling look. We offer our services at the most affordable prices. Call us now and enjoy the cleanliness of your apartment's windows!"
+      />
+      <Card
+        imgPath="service_4.png"
+        altText="Male icon cleaning windows"
+        cardHeader="Exterior Window Cleaning"
+        cardDesc="Exterior window cleaning is important for the aesthetic appearance and safety of buildings. We provide professional exterior window cleaning service to our valued customers. Our team will clean the exterior windows, glass panels, and balconies of your buildings, providing a sparkling look. We offer our services at the most affordable prices. Call us now and enjoy the cleanliness of your building's exterior windows!"
+      />
+      <Card
+        imgPath="service_5.png"
+        altText="Construction hat icon"
+        cardHeader="Post-Construction Cleaning"
+        cardDesc="Post-construction cleaning is an important step to be taken after construction projects are completed. We provide professional post-construction cleaning service to our valued customers. Our team will clean construction materials, dust, and debris, making the completed area hygienic. We offer our services at the most affordable prices. Call us now and breathe a sigh of relief after your construction project!"
+      />
+      <Card
+        imgPath="service_6.png"
+        altText="Cleaning tools icons around a house icon"
+        cardHeader="Upholstery Cleaning"
+        cardDesc="Upholstery cleaning is important to maintain the hygiene and appearance of your home or office. We provide professional upholstery cleaning service to our valued customers. Our team will clean all types of stains, dirt, and odors from your upholstery, restoring their original look. We offer our services at the most affordable prices. Call us now and enjoy the cleanliness of your upholstery!"
+      />
+    </div>
+  </article>
 </section>
-
 <style>
-    section{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-top: 10rem;
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rem;
+  }
+  h3 {
+    font-weight: var(--wmedium);
+    font-size: var(--h1);
+  }
+  h3 span.blue-text {
+    color: var(--primary-color);
+    font-weight: var(--wbold);
+  }
+  .motto-text {
+    font-size: var(--h5);
+    font-weight: var(--wregular);
+    color: #7c7c7c;
+    margin-top: 1rem;
+  }
+  .cards {
+    padding: 0 5rem;
+    margin-top: 3.125rem;
+  }
+  @media only screen and (max-width: 768px) {
+    .cards {
+      padding: 0 2.5em;
     }
-    h3{
-        font-weight: var(--wmedium);
-        font-size: var(--h1);
+    h3 {
+      font-size: var(--h2);
     }
-    h3 span.blue-text{
-        color: var(--primary-color);
-        font-weight: var(--wbold);
+  }
+  @media only screen and (max-width: 425px) {
+    h3 {
+      font-size: var(--h3);
     }
-    .motto-text{
-        font-size: var(--h5);
-        font-weight: var(--wregular);
-        color: #7C7C7C;
-        margin-top: 1rem;
+    .cards {
+      padding: 0 0.5em;
     }
-    .cards{
-        padding: 0 5rem;
-        margin-top: 3.125rem;
-    }
-
-    
-    
-    @media only screen and (max-width: 768px){
-        .cards{
-            padding: 0 2.5em;
-        }
-        h3{
-            font-size: var(--h2);
-        }
-    }
-    @media only screen and (max-width: 425px){
-        h3{
-            font-size: var(--h3);
-        }
-
-        .cards{
-            padding: 0 0.5em;
-        }
-    }
+  }
 </style>
-

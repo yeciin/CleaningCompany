@@ -1,406 +1,432 @@
 ---
 export interface Props {
-    brand_name: string;
+  brand_name: string;
 
-	navbarItem_1: string;
-	navbarItem_2: string;
-	navbarItem_3: string;
-	navbarItem_4: string;
-	navbarItem_5: string;
+  navbarItem_1: string;
+  navbarItem_2: string;
+  navbarItem_3: string;
+  navbarItem_4: string;
+  navbarItem_5: string;
 
-    buttonItem_1: string;
-    buttonItem_2: string;
+  buttonItem_1: string;
+  buttonItem_2: string;
 }
 
-const { brand_name, navbarItem_1, navbarItem_2, navbarItem_3, navbarItem_4, navbarItem_5, buttonItem_1, buttonItem_2 } = Astro.props;
+const {
+  brand_name,
+  navbarItem_1,
+  navbarItem_2,
+  navbarItem_3,
+  navbarItem_4,
+  navbarItem_5,
+  buttonItem_1,
+  buttonItem_2,
+} = Astro.props;
 ---
 
 <nav>
-    <h2><a href="/" class="logo-brand">{brand_name}</a><a href="tel:+905331514270" id="ekstra-tel"><i class="fa-solid fa-phone"></i>+90 533 151 4270</a></h2>
-    
+  <h2>
+    <a href="/" class="logo-brand">{brand_name}</a><a
+      href="tel:+905331514270"
+      id="ekstra-tel"><i class="fa-solid fa-phone"></i>+90 533 151 4270</a
+    >
+  </h2>
 
-    <ul class="navbar-items">
-        <li class="navbar-item"><a href="/" class="navbar-link active">{navbarItem_1}</a></li>
-        <li class="navbar-item"><a href="#hakkimizda" class="navbar-link">{navbarItem_2}</a></li>
-        <li class="navbar-item"><a href="#hizmetlerimiz" class="navbar-link">{navbarItem_3}</a></li>
-        <li class="navbar-item"><a href="#referanslarimiz" class="navbar-link">{navbarItem_4}</a></li>
-        <li class="navbar-item"><a href="#iletisim" class="navbar-link">{navbarItem_5}</a></li>
+  <ul class="navbar-items">
+    <li class="navbar-item">
+      <a href="/" class="navbar-link active">{navbarItem_1}</a>
+    </li>
+    <li class="navbar-item">
+      <a href="#about" class="navbar-link">{navbarItem_2}</a>
+    </li>
+    <li class="navbar-item">
+      <a href="#our-services" class="navbar-link">{navbarItem_3}</a>
+    </li>
+    <li class="navbar-item">
+      <a href="#our-references" class="navbar-link">{navbarItem_4}</a>
+    </li>
+    <li class="navbar-item">
+      <a href="#contact" class="navbar-link">{navbarItem_5}</a>
+    </li>
 
-        <li class="navbar-item buttons" id="small-laptop-delete"><a href="tel:+905331514270" class="navbar-link button button-outline"><i class="fa-solid fa-phone"></i>{buttonItem_1}</a></li>
-        <li class="navbar-item button" id="tel-no"><a href="tel:+905331514270" class="navbar-link button">{buttonItem_2}</a></li>
-        <li class="navbar-item button" id="go-contact"><a href="#iletisim" class="navbar-link button">{buttonItem_2}</a></li>
-    </ul>
-    
-    
-    <div class="hamburger-menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </div>
+    <li class="navbar-item buttons" id="small-laptop-delete">
+      <a href="tel:+905331514270" class="navbar-link button button-outline"
+        ><i class="fa-solid fa-phone"></i>{buttonItem_1}</a
+      >
+    </li>
+    <li class="navbar-item button" id="tel-no">
+      <a href="tel:+905331514270" class="navbar-link button">{buttonItem_2}</a>
+    </li>
+    <li class="navbar-item button" id="go-contact">
+      <a href="#contact" class="navbar-link button">{buttonItem_2}</a>
+    </li>
+  </ul>
+
+  <div class="hamburger-menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
 </nav>
 
 <style>
-    /* Navbar */
-    nav{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: var(--primary-color);
-        min-height: 70px;
-        padding: 0 5rem;
-        width: 100%;
+  /* Navbar */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+    min-height: 70px;
+    padding: 0 5rem;
+    width: 100%;
+  }
+
+  nav a,
+  ul,
+  li {
+    text-decoration: none;
+    list-style-type: none;
+  }
+
+  /* Navbar Brand */
+  nav h2 a {
+    color: var(--white);
+  }
+
+  nav a.logo-brand {
+    font-size: var(--h3);
+    font-weight: var(--wbold);
+  }
+
+  /* Navbar Links */
+  nav ul.navbar-items {
+    display: flex;
+    gap: 32px;
+  }
+
+  nav ul.navbar-items a.navbar-link {
+    color: var(--white);
+    font-size: var(--h6);
+    font-weight: var(--wregular);
+    transition: 0.3s ease;
+    -webkit-transition: 0.3s ease;
+  }
+  nav ul.navbar-items a.navbar-link:active {
+    font-weight: 700;
+  }
+
+  nav ul.navbar-items .navbar-item {
+    transition: 0.3s ease;
+    -webkit-transition: 0.3s ease;
+  }
+  nav ul.navbar-items .navbar-item:hover {
+    scale: 1.02;
+  }
+
+  nav ul.navbar-items a.navbar-link.button {
+    border: 2px solid transparent;
+    background-color: var(--white);
+    color: var(--primary-color);
+    font-weight: var(--wmedium);
+    font-size: var(--body);
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    transition: 0.5s ease;
+    -webkit-transition: 0.5 ease;
+  }
+
+  nav ul.navbar-items a.navbar-link.button:hover {
+    box-shadow: 0 10px 10px -10px rgba(0, 2, 98, 0.899);
+    border-color: var(--primary-color);
+  }
+
+  nav ul.navbar-items .navbar-item.buttons,
+  nav ul.navbar-items .navbar-item.button:hover {
+    scale: 1;
+  }
+
+  /* Outlined Button */
+  nav ul.navbar-items a.navbar-link.button.button-outline {
+    background-color: transparent;
+    color: var(--white);
+    border-radius: 32px;
+  }
+  nav ul.navbar-items a.navbar-link.button.button-outline:hover {
+    box-shadow: none;
+    border-color: none;
+  }
+  nav ul.navbar-items a.navbar-link.button.button-outline i {
+    margin-right: 0.625rem;
+  }
+  .active {
+    font-weight: 700 !important;
+  }
+  nav ul li.buttons {
+    margin-left: 12rem;
+  }
+
+  #tel-no {
+    display: none;
+  }
+
+  #ekstra-tel {
+    display: none;
+    background-color: transparent;
+    color: var(--white);
+    border-radius: 32px;
+  }
+
+  #ekstra-tel i {
+    margin-right: 0.625rem;
+  }
+
+  /* Hamburger Menu */
+  .hamburger-menu {
+    display: none;
+    cursor: pointer;
+  }
+
+  .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--white);
+  }
+
+  @media only screen and (max-width: 1520px) {
+    nav {
+      padding: 0 2.5rem;
+    }
+    nav ul.navbar-items {
+      gap: 16px;
     }
 
-    nav a, ul, li{
-        text-decoration: none;
-        list-style-type: none;
+    nav ul li.buttons {
+      margin-left: 16rem;
+    }
+  }
+  @media only screen and (max-width: 1400px) {
+    nav {
+      padding: 0 2.5rem;
+    }
+    nav ul.navbar-items {
+      gap: 16px;
     }
 
-    /* Navbar Brand */
-    nav h2 a{
-        color: var(--white);
+    nav ul li.buttons {
+      margin-left: 12rem;
     }
-    
-    nav a.logo-brand{
-        font-size: var(--h3);
-        font-weight: var(--wbold);
-    }
+  }
 
-    /* Navbar Links */
-    nav ul.navbar-items{
-        display: flex;
-        gap: 32px;
+  @media only screen and (max-width: 1320px) {
+    nav {
+      padding: 0 2.5rem;
+    }
+    nav ul.navbar-items {
+      gap: 16px;
     }
 
-    nav ul.navbar-items a.navbar-link{
-        color: var(--white);
-        font-size: var(--h6);
-        font-weight: var(--wregular);
-        transition: 0.3s ease;
-        -webkit-transition: 0.3s ease;
+    nav ul li.buttons {
+      margin-left: 4rem;
     }
-    nav ul.navbar-items a.navbar-link:active{
-        font-weight: 700;
+  }
+
+  @media only screen and (max-width: 1190px) {
+    nav {
+      padding: 0 0.5rem;
     }
-    
-    nav ul.navbar-items .navbar-item{
-        transition: 0.3s ease;
-        -webkit-transition: 0.3s ease;
-    }
-    nav ul.navbar-items .navbar-item:hover{
-        scale: 1.02;
+    nav ul.navbar-items {
+      gap: 8px;
     }
 
+    nav ul li.buttons {
+      margin-left: 2rem;
+    }
+  }
 
-    nav ul.navbar-items a.navbar-link.button{
-        border: 2px solid transparent;
-        background-color: var(--white);
-        color: var(--primary-color);
-        font-weight: var(--wmedium);
-        font-size: var(--body);
-        padding: 0.5rem 1rem;
-        border-radius: 10px;
-        transition: 0.5s ease;
-        -webkit-transition: 0.5 ease;
+  @media only screen and (max-width: 1050px) {
+    nav {
+      flex-direction: column;
+      height: 20vh;
+      padding: 0.75rem;
+    }
+    nav ul.navbar-items {
+      gap: 12px;
     }
 
-    nav ul.navbar-items a.navbar-link.button:hover{
-        box-shadow: 0 10px 10px -10px rgba(0, 2, 98, 0.899);
-		border-color: var(--primary-color);
+    nav ul li.buttons {
+      margin-left: 8rem;
+    }
+  }
+
+  @media only screen and (max-width: 950px) {
+    nav {
+      flex-direction: column;
+      height: 20vh;
+      padding: 0.75rem;
+    }
+    nav ul.navbar-items {
+      gap: 12px;
     }
 
-    nav ul.navbar-items .navbar-item.buttons, nav ul.navbar-items .navbar-item.button:hover{
-        scale: 1;
+    nav ul li.buttons {
+      margin-left: 4rem;
+    }
+  }
+
+  @media only screen and (max-width: 900px) {
+    h2 {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    #small-laptop-delete {
+      display: none;
+    }
+    ul {
+      margin-top: 1rem;
+    }
+    li.navbar-item:last-child {
+      margin-left: 5rem;
     }
 
-    /* Outlined Button */
-    nav ul.navbar-items a.navbar-link.button.button-outline{
-        background-color: transparent;
-        color: var(--white);
-        border-radius: 32px;
+    #ekstra-tel {
+      display: inline-block;
     }
-    nav ul.navbar-items a.navbar-link.button.button-outline:hover{
-        box-shadow: none;
-		border-color: none;
-    }
-    nav ul.navbar-items a.navbar-link.button.button-outline i{
-        margin-right: 0.625rem;       
-    }
-    .active{
-        font-weight: 700 !important;
-    }
-    nav ul li.buttons{
-        margin-left: 12rem;
-    }
+  }
 
-    #tel-no{
-        display: none;
+  @media only screen and (max-width: 768px) {
+    nav {
+      position: fixed;
+      top: 0;
+    }
+    h2 {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .hamburger-menu {
+      display: block;
     }
 
-    #ekstra-tel{
-        display: none;
-        background-color: transparent;
-        color: var(--white);
-        border-radius: 32px;
+    .hamburger.open .bar:nth-child(2) {
+      opacity: 0;
     }
 
-    #ekstra-tel i{
-        margin-right: 0.625rem;
+    .hamburger.open .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+      -webkit-transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.open .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+      -webkit-transform: translateY(-8px) rotate(-45deg);
     }
 
-
-    /* Hamburger Menu */
-    .hamburger-menu{
-        display: none;
-        cursor: pointer;
+    nav {
+      flex-direction: row;
+    }
+    nav ul.navbar-items {
+      gap: 0px;
+      margin-top: 0rem;
     }
 
-    .bar{
-        display: block;
-        width: 25px;
-        height: 3px;
-        margin: 5px auto;
-        -webkit-transition: all 0.3s ease-in-out;
-        transition: all 0.3s ease-in-out;
-        background-color: var(--white);
-    }
- 
-       
-    @media only screen and (max-width: 1520px){
-        nav{
-            padding: 0 2.5rem;
-        }   
-        nav ul.navbar-items{
-            gap: 16px;
-        }
-
-        nav ul li.buttons{
-            margin-left: 16rem;
-        }
-    }
-    @media only screen and (max-width: 1400px){
-        nav{
-            padding: 0 2.5rem;
-        }   
-        nav ul.navbar-items{
-            gap: 16px;
-        }
-
-        nav ul li.buttons{
-            margin-left: 12rem;
-        }
+    nav ul li.buttons {
+      margin-left: 0rem;
+      margin-top: 3rem;
     }
 
-    @media only screen and (max-width: 1320px){
-        nav{
-            padding: 0 2.5rem;
-        }   
-        nav ul.navbar-items{
-            gap: 16px;
-        }
-
-        nav ul li.buttons{
-            margin-left: 4rem;
-        }
+    ul.navbar-items {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      right: -100%;
+      top: 20vh;
+      background-color: var(--primary-color);
+      width: 250px;
+      text-align: left;
+      -webkit-transition: 0.3s;
+      transition: 0.3s;
+      padding-left: 2em;
+      padding-bottom: 2em;
+      border-radius: 0 0 8px 60px;
+      z-index: 21;
     }
 
-    @media only screen and (max-width: 1190px){
-        nav{
-            padding: 0 0.5rem;
-        }   
-        nav ul.navbar-items{
-            gap: 8px;
-        }
-
-        nav ul li.buttons{
-            margin-left: 2rem;
-        }
+    ul.navbar-items.open {
+      right: 0;
     }
 
-    @media only screen and (max-width: 1050px){
-        nav{
-            flex-direction: column;
-            height: 20vh;
-            padding: 0.75rem;
-        }   
-        nav ul.navbar-items{
-            gap: 12px;
-        }
-
-        nav ul li.buttons{
-            margin-left: 8rem;
-        }
+    ul li.navbar-item {
+      margin: 8px 0;
+      padding: 0.375em 0.75em;
     }
 
-    @media only screen and (max-width: 950px){
-        nav{
-            flex-direction: column;
-            height: 20vh;
-            padding: 0.75rem;
-        }   
-        nav ul.navbar-items{
-            gap: 12px;
-        }
-
-        nav ul li.buttons{
-            margin-left: 4rem;
-        }
+    nav a.logo-brand {
+      font-size: var(--h4);
+      font-weight: var(--wbold);
     }
 
-    @media only screen and (max-width: 900px){
-        h2{
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        #small-laptop-delete{
-            display: none;
-        }
-        ul{
-            margin-top: 1rem;
-        }
-        li.navbar-item:last-child{
-            margin-left: 5rem;
-        }
-
-
-        #ekstra-tel{
-            display: inline-block;
-        }
+    nav ul li.buttons {
+      margin-left: 0rem;
     }
 
-    @media only screen and (max-width: 768px){
-        nav{
-            position: fixed;
-            top: 0;
-        }
-        h2{
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        .hamburger-menu{
-            display: block;
-        }
-
-        .hamburger.open .bar:nth-child(2){
-            opacity: 0;
-        }
-
-        .hamburger.open .bar:nth-child(1){
-            transform: translateY(8px) rotate(45deg);
-            -webkit-transform: translateY(8px) rotate(45deg);
-        }
-        .hamburger.open .bar:nth-child(3){
-            transform: translateY(-8px) rotate(-45deg);
-            -webkit-transform: translateY(-8px) rotate(-45deg);
-        }
-
-        nav{
-            flex-direction: row;
-        }   
-        nav ul.navbar-items{
-            gap: 0px;
-            margin-top: 0rem;
-        }
-
-        nav ul li.buttons{
-            margin-left: 0rem;
-            margin-top: 3rem;
-        }
-
-        ul.navbar-items{
-            display: flex;
-            flex-direction: column;
-            position: fixed;
-            right: -100%;
-            top: 20vh;
-            background-color: var(--primary-color);
-            width: 250px;
-            text-align: left;
-            -webkit-transition: 0.3s;
-            transition: 0.3s;
-            padding-left: 2em;
-            padding-bottom: 2em;
-            border-radius: 0 0 8px 60px;
-            z-index: 21;
-        }
-
-        ul.navbar-items.open{
-            right: 0;
-        }
-
-        ul li.navbar-item{
-            margin: 8px 0;
-            padding: .375em .75em;
-        }
-
-        nav a.logo-brand{
-            font-size: var(--h4);
-            font-weight: var(--wbold);
-        }
-
-        nav ul li.buttons{
-            margin-left: 0rem;
-        }
-
-        nav ul.navbar-items a.navbar-link.button.button-outline{
-            border: 2px solid var(--white);
-            background-color: transparent;
-            color: var(--white);
-            border-radius: 32px;
-        }
-
-        nav ul.navbar-items a.navbar-link.button.button-outline:hover i{
-            -webkit-transform: scale(1.5) rotate(18deg);
-            transform: scale(1.5) rotate(18deg);
-        }
-
-        nav ul.navbar-items a.navbar-link.button.button-outline i{
-            transition: 0.5s ease-in-out;
-            -webkit-transition: 0.5s ease-out;
-            -webkit-transform: perspective(1px) translateZ(0);
-            transform: perspective(1px) translateZ(0);
-        }
-
-        #tel-no{
-            display: inline-block;
-        }
-        #go-contact{
-            display: none;
-        }
-        #ekstra-tel{
-            display: inline-block;
-        }
+    nav ul.navbar-items a.navbar-link.button.button-outline {
+      border: 2px solid var(--white);
+      background-color: transparent;
+      color: var(--white);
+      border-radius: 32px;
     }
+
+    nav ul.navbar-items a.navbar-link.button.button-outline:hover i {
+      -webkit-transform: scale(1.5) rotate(18deg);
+      transform: scale(1.5) rotate(18deg);
+    }
+
+    nav ul.navbar-items a.navbar-link.button.button-outline i {
+      transition: 0.5s ease-in-out;
+      -webkit-transition: 0.5s ease-out;
+      -webkit-transform: perspective(1px) translateZ(0);
+      transform: perspective(1px) translateZ(0);
+    }
+
+    #tel-no {
+      display: inline-block;
+    }
+    #go-contact {
+      display: none;
+    }
+    #ekstra-tel {
+      display: inline-block;
+    }
+  }
 </style>
 
-
 <script>
-    // Hamburger Menü
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
-    const navbarMenu = document.querySelector('.navbar-items');
-    const navbarItems = document.querySelectorAll('.navbar-link');
+  // Hamburger Menü
+  const hamburgerMenu = document.querySelector(".hamburger-menu");
+  const navbarMenu = document.querySelector(".navbar-items");
+  const navbarItems = document.querySelectorAll(".navbar-link");
 
-    hamburgerMenu.addEventListener('click', () => {
-        hamburgerMenu.classList.toggle('open');
-        navbarMenu.classList.toggle('open');
+  hamburgerMenu.addEventListener("click", () => {
+    hamburgerMenu.classList.toggle("open");
+    navbarMenu.classList.toggle("open");
+  });
+
+  // Itemlere class atama
+  navbarItems.forEach((n) =>
+    n.addEventListener("click", () => {
+      // Hamburgeri İçeren Kısım
+      hamburgerMenu.classList.remove("open");
+      navbarMenu.classList.remove("open");
+
+      // Navbar Items Active
+      let active = document.querySelector(".active");
+
+      active.classList.remove("active");
+      n.classList.add("active");
     })
-
-    // Itemlere class atama
-    navbarItems.forEach(n => n.addEventListener('click', () => {
-        // Hamburgeri İçeren Kısım
-        hamburgerMenu.classList.remove('open');
-        navbarMenu.classList.remove('open');
-
-
-        // Navbar Items Active
-        let active = document.querySelector('.active');
-
-        active.classList.remove('active')
-        n.classList.add('active')
-    }))
-
-
-    
+  );
 </script>

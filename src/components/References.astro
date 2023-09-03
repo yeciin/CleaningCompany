@@ -1,0 +1,119 @@
+---
+export interface Props {
+  headerText: string;
+  headerTextColorized: string;
+  reference_1: string;
+  reference_2: string;
+  reference_3: string;
+  reference_4: string;
+  reference_5: string;
+  reference_6: string;
+  reference_7: string;
+  reference_8: string;
+  reference_9: string;
+  reference_10: string;
+  reference_11: string;
+  reference_12: string;
+  reference_13: string;
+  reference_14: string;
+  reference_15: string;
+}
+
+const {
+  headerText,
+  headerTextColorized,
+  reference_1,
+  reference_2,
+  reference_3,
+  reference_4,
+  reference_5,
+  reference_6,
+  reference_7,
+  reference_8,
+  reference_9,
+  reference_10,
+  reference_11,
+  reference_12,
+  reference_13,
+  reference_14,
+  reference_15,
+} = Astro.props;
+---
+
+<section>
+  <h2>{headerText} <mark class="blue-text">{headerTextColorized}</mark></h2>
+
+  <article>
+    <ul class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+      <li>{reference_1}</li>
+      <li>{reference_2}</li>
+      <li>{reference_3}</li>
+      <li>{reference_4}</li>
+      <li>{reference_5}</li>
+      <li>{reference_6}</li>
+      <li>{reference_7}</li>
+      <li>{reference_8}</li>
+      <li>{reference_9}</li>
+      <li>{reference_10}</li>
+      <li>{reference_11}</li>
+      <li>{reference_12}</li>
+      <li>{reference_13}</li>
+      <li>{reference_14}</li>
+      <li>{reference_15}</li>
+    </ul>
+  </article>
+</section>
+
+<style>
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rem;
+    width: 100%;
+  }
+
+  h2 {
+    font-weight: var(--wmedium);
+    font-size: var(--h1);
+  }
+  h2 mark.blue-text {
+    color: var(--primary-color);
+    font-weight: var(--wbold);
+    background-color: white;
+  }
+  .motto-text {
+    font-size: var(--h5);
+    font-weight: var(--wregular);
+    color: #7c7c7c;
+    margin-top: 1rem;
+  }
+  ul {
+    background-color: var(--primary-color);
+    column-gap: 8rem;
+    row-gap: 3.615rem;
+    width: 100%;
+    padding: 2.5rem;
+    border-radius: 20px;
+    list-style: disc;
+    color: var(--white);
+    margin-top: 2.5rem;
+  }
+  li {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+  }
+
+  @media only screen and (max-width: 1023px) {
+    h2 {
+      font-size: var(--h2);
+    }
+  }
+
+  @media only screen and (max-width: 954px) {
+    h2 {
+      font-size: var(--h3);
+    }
+  }
+</style>
